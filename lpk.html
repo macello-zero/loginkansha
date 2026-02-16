@@ -2,123 +2,99 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LPK Kansha Indonesia Center</title>
+<title>Login Sistem LPK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f8f9fa;
-  color:#333;
-}
-
-header{
-  background:linear-gradient(135deg,#1a73e8,#004aad);
-  color:white;
-  padding:60px 20px;
-  text-align:center;
-}
-
-header h1{
-  margin:0;
-  font-size:32px;
-}
-
-section{
-  padding:50px 20px;
-  max-width:900px;
-  margin:auto;
-}
-
-h2{
-  color:#1a73e8;
-  margin-bottom:15px;
+  height:100vh;
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .card{
   background:white;
-  padding:25px;
-  margin:20px 0;
-  border-radius:10px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  width:380px;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  animation:fade 0.6s ease-in-out;
 }
 
-ul{
-  padding-left:20px;
+@keyframes fade{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
-footer{
-  background:#1a73e8;
-  color:white;
+h2{
   text-align:center;
-  padding:20px;
-  margin-top:40px;
+  margin-bottom:25px;
+  font-weight:600;
+  color:#1e293b;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+input:focus{
+  border-color:#1e3a8a;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  background:#1e3a8a;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#0f172a;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>LPK Kansha Indonesia Center</h1>
-  <p>Mempersiapkan Generasi Profesional untuk Jepang</p>
-</header>
+<div class="card">
+  <h2>Sistem LPK Kansha</h2>
 
-<section>
-  <h2>Apa Itu LPK Kansha?</h2>
-  <div class="card">
-    <p>
-      LPK Kansha Indonesia Center adalah lembaga pelatihan kerja yang berfokus pada pendidikan bahasa Jepang serta persiapan tenaga kerja profesional untuk bekerja dan magang di Jepang.
-    </p>
-    <p>
-      LPK Kansha hadir sebagai wadah pembinaan generasi muda Indonesia agar memiliki keterampilan bahasa, disiplin kerja, dan pemahaman budaya Jepang sebelum memasuki dunia kerja internasional.
-    </p>
-  </div>
+  <form id="loginForm">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Masuk</button>
+  </form>
+</div>
 
-  <h2>Visi</h2>
-  <div class="card">
-    Menjadi lembaga pelatihan kerja terpercaya yang mencetak sumber daya manusia kompeten, berkarakter, dan siap bersaing di tingkat global.
-  </div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
-  <h2>Misi</h2>
-  <div class="card">
-    <ul>
-      <li>Memberikan pelatihan bahasa Jepang secara intensif dan terstruktur</li>
-      <li>Membentuk karakter disiplin dan etos kerja tinggi</li>
-      <li>Membekali peserta dengan pemahaman budaya dan sistem kerja Jepang</li>
-      <li>Mendampingi peserta hingga proses penempatan kerja</li>
-    </ul>
-  </div>
-
-  <h2>Program Pelatihan</h2>
-  <div class="card">
-    <h3>1️⃣ Pelatihan Bahasa Jepang</h3>
-    <p>Pembelajaran dari dasar hingga tingkat persiapan kerja (umumnya setara N5–N4).</p>
-
-    <h3>2️⃣ Pembinaan Sikap & Kedisiplinan</h3>
-    <p>Pelatihan fisik, mental, dan etika kerja sesuai standar perusahaan Jepang.</p>
-
-    <h3>3️⃣ Persiapan Administrasi & Seleksi</h3>
-    <p>Pendampingan dalam proses dokumen, wawancara, hingga keberangkatan.</p>
-  </div>
-
-  <h2>Mengapa Memilih LPK Kansha?</h2>
-  <div class="card">
-    ✔ Sistem pelatihan terstruktur<br>
-    ✔ Pendampingan hingga penempatan<br>
-    ✔ Lingkungan belajar disiplin dan fokus<br>
-    ✔ Jaringan kerja sama dengan perusahaan di Jepang
-  </div>
-
-  <h2>Komitmen Kami</h2>
-  <div class="card">
-    LPK Kansha berkomitmen membimbing peserta tidak hanya untuk lulus pelatihan, tetapi benar-benar siap menghadapi tantangan kerja di Jepang, baik dari segi bahasa, mental, maupun profesionalisme.
-  </div>
-</section>
-
-<footer>
-  © 2026 LPK Kansha Indonesia Center
-</footer>
+  window.location.href = "lpk.html";
+});
+</script>
 
 </body>
 </html>
