@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login Sistem LPK</title>
+<title>Dashboard LPK</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -15,86 +15,112 @@
 }
 
 body{
-  height:100vh;
-  background:linear-gradient(135deg,#0f172a,#1e3a8a);
   display:flex;
-  justify-content:center;
-  align-items:center;
+  height:100vh;
+  background:#f1f5f9;
 }
 
-.card{
-  background:white;
-  width:380px;
-  padding:40px;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.3);
-  animation:fade 0.6s ease-in-out;
-}
-
-@keyframes fade{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-h2{
-  text-align:center;
-  margin-bottom:25px;
-  font-weight:600;
-  color:#1e293b;
-}
-
-input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border:1px solid #d1d5db;
-  border-radius:8px;
-  transition:0.3s;
-}
-
-input:focus{
-  border-color:#1e3a8a;
-  outline:none;
-}
-
-button{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  background:#1e3a8a;
+.sidebar{
+  width:250px;
+  background:#0f172a;
   color:white;
-  border:none;
-  border-radius:8px;
+  padding:20px;
+}
+
+.sidebar h2{
+  margin-bottom:30px;
   font-weight:600;
+}
+
+.sidebar ul{
+  list-style:none;
+}
+
+.sidebar ul li{
+  padding:12px;
+  margin:5px 0;
+  border-radius:8px;
   cursor:pointer;
   transition:0.3s;
 }
 
-button:hover{
-  background:#0f172a;
+.sidebar ul li:hover{
+  background:#1e293b;
+}
+
+.content{
+  flex:1;
+  padding:40px;
+  overflow:auto;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.card h3{
+  margin-bottom:10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h2>Sistem LPK Kansha</h2>
-
-  <form id="loginForm">
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Masuk</button>
-  </form>
+<div class="sidebar">
+  <h2>LPK System</h2>
+  <ul>
+    <li>Data Siswa</li>
+    <li>Program & Kelas</li>
+    <li>Absensi</li>
+    <li>Pembayaran</li>
+    <li>Pengumuman</li>
+    <li>Sertifikat</li>
+    <li>Pengaturan</li>
+  </ul>
 </div>
 
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
-  e.preventDefault();
+<div class="content">
 
-  window.location.href = "lpk.html";
-});
-</script>
+  <div class="card">
+    <h3>Data Siswa</h3>
+    <p>Daftar siswa, status pembayaran, riwayat kelas.</p>
+  </div>
+
+  <div class="card">
+    <h3>Program & Kelas</h3>
+    <p>Jenis program, jadwal kelas, instruktur, kapasitas.</p>
+  </div>
+
+  <div class="card">
+    <h3>Absensi</h3>
+    <p>Absensi harian, rekap kehadiran, export laporan.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pembayaran</h3>
+    <p>Tagihan siswa dan riwayat transaksi.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pengumuman</h3>
+    <p>Info jadwal, ujian, dan kegiatan.</p>
+  </div>
+
+  <div class="card">
+    <h3>Sertifikat</h3>
+    <p>Generate dan download sertifikat PDF.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pengaturan</h3>
+    <p>Profil lembaga, manajemen admin, backup data.</p>
+  </div>
+
+</div>
 
 </body>
 </html>
