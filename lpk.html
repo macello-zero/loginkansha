@@ -4,76 +4,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dashboard LPK Kansha</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
+  font-family:'Inter', sans-serif;
 }
 
-/* ===== Background Sakura Gradient ===== */
 body{
-  margin:0;
-  font-family:'Poppins', sans-serif;
-
-  background-image: 
-    linear-gradient(rgba(255,182,193,0.65), rgba(255,105,180,0.65)),
+  background-image:
+    linear-gradient(rgba(255,192,203,0.75), rgba(255,105,180,0.75)),
     url("https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1920");
 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
 
+/* ====== LAYOUT ====== */
 
-/* Sakura light effect */
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,182,193,0.3), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,192,203,0.25), transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(255,182,193,0.2), transparent 40%);
-  z-index:-1;
+.wrapper{
+  display:flex;
+  min-height:100vh;
 }
 
-/* ===== Sidebar ===== */
+/* ====== CONTENT (KIRI) ====== */
+
+.content{
+  flex:1;
+  padding:60px;
+  backdrop-filter: blur(4px);
+}
+
+h1{
+  font-size:32px;
+  font-weight:700;
+  color:#1e293b;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#374151;
+  margin-bottom:40px;
+  font-weight:400;
+}
+
+/* ====== CARD ====== */
+
+.card{
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:18px;
+  margin-bottom:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h2{
+  margin-bottom:15px;
+  font-size:20px;
+  font-weight:600;
+  color:#1e293b;
+}
+
+.card p{
+  line-height:1.7;
+  color:#374151;
+}
+
+/* ====== SIDEBAR (KANAN) ====== */
+
 .sidebar{
   width:260px;
-  background:linear-gradient(180deg,#0f172a,#1e3a8a);
+  background:#1e3a8a;
+  padding:40px 20px;
   color:white;
-  padding:30px 20px;
-  box-shadow:4px 0 20px rgba(0,0,0,0.1);
+  position:sticky;
+  top:0;
+  height:100vh;
 }
 
-.sidebar .logo{
-  text-align:center;
+.sidebar h3{
   margin-bottom:30px;
-}
-
-.sidebar .logo h2{
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:1px;
-}
-
-.sidebar .logo span{
-  font-size:12px;
-  opacity:0.7;
+  font-weight:600;
+  text-align:center;
 }
 
 .sidebar ul{
   list-style:none;
 }
 
-.sidebar ul li{
+.sidebar li{
   padding:12px;
   margin:8px 0;
   border-radius:10px;
@@ -82,169 +111,64 @@ body::before{
   font-size:14px;
 }
 
-.sidebar ul li:hover{
+.sidebar li:hover{
   background:rgba(255,255,255,0.15);
 }
 
-/* ===== Content ===== */
-.content{
-  flex:1;
-  padding:50px;
-}
-
-/* Header */
-.header{
-  margin-bottom:40px;
-}
-
-.header h1{
-  font-size:28px;
-  font-weight:700;
-  color:#1e293b;
-}
-
-.header p{
-  margin-top:8px;
-  color:#475569;
-  font-size:14px;
-}
-
-/* Glass Card */
-.card{
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(10px);
-  padding:25px;
-  border-radius:18px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.08);
-  margin-bottom:25px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-}
-
-.card h3{
-  margin-bottom:12px;
-  font-weight:600;
-  color:#1e293b;
-}
-
-.card p, .card li{
-  font-size:14px;
-  color:#475569;
-  line-height:1.7;
-}
-
-.card ul{
-  padding-left:18px;
-}
-
-.footer{
-  text-align:center;
-  margin-top:40px;
-  font-size:13px;
-  color:#64748b;
-}
 </style>
 </head>
 
 <body>
 
-<!-- ===== Sidebar ===== -->
-<div class="sidebar">
-  <div class="logo">
-    <h2>LPK KANSHA</h2>
-    <span>Indonesia Center</span>
-  </div>
+<div class="wrapper">
 
-  <ul>
-    <li>Deskripsi LPK</li>
-    <li>Visi</li>
-    <li>Misi</li>
-    <li>Aturan Pekerja</li>
-    <li>Aturan Siswa</li>
-    <li>Program Pelatihan</li>
-  </ul>
-</div>
+  <!-- ===== CONTENT KIRI ===== -->
+  <div class="content">
 
-<!-- ===== Content ===== -->
-<div class="content">
-
-  <div class="header">
     <h1>Dashboard LPK Kansha</h1>
-    <p>Sistem Informasi LPK Kansha Indonesia Center</p>
+    <div class="subtitle">Sistem Informasi LPK Kansha Indonesia Center</div>
+
+    <div class="card">
+      <h2>Deskripsi LPK</h2>
+      <p>
+        LPK Kansha Indonesia Center adalah lembaga pelatihan kerja yang berfokus pada pengembangan keterampilan dan peningkatan kompetensi tenaga kerja, khususnya untuk mempersiapkan calon pekerja memasuki dunia kerja domestik maupun internasional (terutama program magang ke Jepang). 
+        Lembaga ini memiliki izin resmi dari Disperinaker, terakreditasi, serta berperan sebagai Sending Organization.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Visi</h2>
+      <p>
+        Menjadi lembaga pelatihan kerja profesional yang mencetak tenaga kerja terampil, disiplin, dan siap bersaing di tingkat nasional maupun internasional.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Misi</h2>
+      <p>
+        • Menyelenggarakan pelatihan keterampilan dan bahasa secara berkualitas.<br>
+        • Membentuk karakter kerja disiplin dan bertanggung jawab.<br>
+        • Memfasilitasi proses seleksi hingga penempatan kerja.<br>
+        • Menjalin kerja sama dengan perusahaan mitra khususnya di Jepang.
+      </p>
+    </div>
+
   </div>
 
-  <!-- Deskripsi -->
-  <div class="card">
-    <h3>Deskripsi LPK</h3>
-    <p>
-    LPK Kansha Indonesia Center adalah lembaga pelatihan kerja yang berfokus pada pengembangan keterampilan dan peningkatan kompetensi tenaga kerja, khususnya untuk mempersiapkan calon pekerja memasuki dunia kerja domestik maupun internasional (terutama program magang ke Jepang).
-    </p>
-    <p>
-    Lembaga ini telah memiliki izin resmi dari Disperinaker, terakreditasi, serta berperan sebagai Sending Organization. Didirikan sejak 2019, dengan legalitas utama diperoleh pada 2022–2023.
-    </p>
-  </div>
-
-  <!-- Visi -->
-  <div class="card">
-    <h3>Visi</h3>
-    <p>
-    Menjadi lembaga pelatihan kerja profesional yang mencetak tenaga kerja terampil, disiplin, dan siap bersaing di tingkat nasional maupun internasional.
-    </p>
-  </div>
-
-  <!-- Misi -->
-  <div class="card">
-    <h3>Misi</h3>
+  <!-- ===== SIDEBAR KANAN ===== -->
+  <div class="sidebar">
+    <h3>Menu Sistem</h3>
     <ul>
-      <li>Menyelenggarakan pelatihan keterampilan dan bahasa secara berkualitas.</li>
-      <li>Membentuk karakter kerja disiplin dan bertanggung jawab.</li>
-      <li>Memfasilitasi proses seleksi, wawancara, hingga penempatan kerja.</li>
-      <li>Menjalin kerja sama dengan perusahaan mitra, khususnya di Jepang.</li>
+      <li>Deskripsi LPK</li>
+      <li>Visi</li>
+      <li>Misi</li>
+      <li>Aturan Pekerja</li>
+      <li>Aturan Siswa</li>
+      <li>Program Pelatihan</li>
     </ul>
-  </div>
-
-  <!-- Aturan Pekerja -->
-  <div class="card">
-    <h3>Aturan Pekerja</h3>
-    <ul>
-      <li>Menjunjung disiplin dan ketepatan waktu.</li>
-      <li>Bertanggung jawab terhadap pekerjaan dan peralatan.</li>
-      <li>Menjaga keselamatan dan kebersihan lingkungan kerja.</li>
-      <li>Bersikap sopan dan menghormati sesama.</li>
-    </ul>
-  </div>
-
-  <!-- Aturan Siswa -->
-  <div class="card">
-    <h3>Aturan Siswa/Siswi</h3>
-    <ul>
-      <li>Sehat jasmani dan rohani (dibuktikan dengan MCU).</li>
-      <li>Tidak buta warna dan tidak memiliki penyakit menular.</li>
-      <li>Tidak bertato atau bertindik.</li>
-      <li>Wajib mematuhi tata tertib pelatihan.</li>
-    </ul>
-  </div>
-
-  <!-- Program -->
-  <div class="card">
-    <h3>Program Kerja / Pelatihan</h3>
-    <ul>
-      <li>Pelatihan bahasa dan budaya kerja Jepang.</li>
-      <li>Persiapan interview dan kontrak kerja.</li>
-      <li>Pembekalan keterampilan industri (perawat, restoran, pertanian, manufaktur, dll).</li>
-    </ul>
-  </div>
-
-  <div class="footer">
-    © 2026 LPK Kansha Indonesia Center
   </div>
 
 </div>
 
 </body>
 </html>
-
-
